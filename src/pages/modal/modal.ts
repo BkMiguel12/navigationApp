@@ -1,25 +1,39 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-modal',
   templateUrl: 'modal.html',
 })
 export class ModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  nombre:string = "";
+  edad:number= 0;
+
+  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
+
+    this.nombre = this.navParams.get('nombre');
+    this.edad = this.navParams.get('edad');
+
+    console.log(this.nombre, this.edad);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+  closeWithParams(){
+    let data = {
+      nombre: 'Miguel Mendoza',
+      edad: 22,
+      profesion: {
+        ocupacion: 'Programador',
+        lugar: 'Dynos Energy'
+      }
+    }
+    this.viewCtrl.dismiss(data);
   }
+
+  closeWithoutParams(){
+    this.viewCtrl.dismiss()
+  }
+
+  
 
 }
