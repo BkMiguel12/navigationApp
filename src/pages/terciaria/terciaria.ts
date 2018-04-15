@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-terciaria',
@@ -9,9 +9,17 @@ export class TerciariaPage {
 
   juego:any = {};
 
-  constructor(private navParams:NavParams){
+  constructor(private navParams:NavParams, private navCtrl:NavController){
 
     this.juego = this.navParams.get("videojuego");
     console.log(this.juego);
+  }
+
+  irAtras(){
+    this.navCtrl.pop();
+  }
+
+  irHome(){
+    this.navCtrl.popToRoot();
   }
 }

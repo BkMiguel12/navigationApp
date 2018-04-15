@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar color="secondary">
-        <ion-title>Pagina Terciaria</ion-title>
+        <ion-title>Terciaria - Recepcion</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -12,4 +12,9 @@
     <h2 ion-text text-center color="primary">Nombre: {{juego.nombre}}</h2>
     <h2 ion-text text-center color="primary">Genero: {{juego.genero}}</h2>
     <img src="../../assets/imgs/{{juego.img}}" alt="Imagen {{juego.nombre}}">
+
+    <button ion-button block color="primary" (click)="irAtras()">Ir atras con evento</button>
+    <button ion-button block color="secondary" (click)="irHome()">Ir a Home</button>
+
+    <button ion-button block color="danger" navPop>Ir atras con HTML</button>
 </ion-content>
