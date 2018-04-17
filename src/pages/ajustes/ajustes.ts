@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams, ModalController } from 'ionic-angular';
+import {  NavController, NavParams, ModalController, MenuController } from 'ionic-angular';
 
 import { ModalPage } from '../index.paginas';
 
@@ -9,7 +9,7 @@ import { ModalPage } from '../index.paginas';
 })
 export class AjustesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl:ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl:ModalController, private menuCtrl: MenuController) {
   }
 
   irTabHome(){
@@ -31,5 +31,9 @@ export class AjustesPage {
         console.log('Se cerro el modal sin parametros');
       }
     });
+  }
+
+  openMenu(){
+    this.menuCtrl.toggle();
   }
 }

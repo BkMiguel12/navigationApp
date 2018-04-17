@@ -2,6 +2,12 @@
 
     <ion-navbar color="dark">
         <ion-title>Principal</ion-title>
+
+        <ion-buttons>
+            <button ion-button icon-only menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 
 </ion-header>
@@ -13,4 +19,6 @@
     <button ion-button block color="primary" (click)="navegarPagina()">Ir a la pagina secundaria</button>
 
     <button ion-button block color="secondary" [navPush]="secundaria">Ir a la pagina secundaria - via html</button>
+
+    <h3 text-center>El menú de esta pantalla se abre a traves de HTML</h3>
 </ion-content>

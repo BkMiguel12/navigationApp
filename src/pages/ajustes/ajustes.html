@@ -1,7 +1,13 @@
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="dark">
         <ion-title>Ajustes</ion-title>
+
+        <ion-buttons>
+            <button ion-button icon-only (click)="openMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 
 </ion-header>
@@ -13,4 +19,6 @@
     <button ion-button block color="danger" (click)="irTabHome()">Ir al tab Home</button>
 
     <button ion-button block color="turquesa" (click)="openModal()">Ventana Modal</button>
+
+    <h3 text-center>El menú de esta pantalla se abre a traves de un evento</h3>
 </ion-content>
